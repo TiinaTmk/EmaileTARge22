@@ -1,19 +1,17 @@
 name: GitHub Actions Demo
 on: [push]
 jobs:
-  mail_on_push:
+  mail-on-push:
     runs-on: ubuntu-latest
     steps:
-    - name: Send mail
-      uses: dawidd6/action-send-mail@v3
-
-with:
-  server_address: smtp.gmail.com
-  server_port: 465
-  username: ${{secrets.MAIL_USERNAME}}
-  password: ${{secrets.MAIL_PASSWORD}}
-
-  subject: Hajusrakendused
-  body: ProovGithub
-  to: tixy1984@gmail.com
-  from: Github actions
+      - name: Send mail
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: email Github push
+          to: tixy1984@gmail.com
+          from: Tiina Tamkivi
+          body: Github push ${{ github.repository }} by ${{github.event.pusher.name}}, ${{github.event.head_commit.message}}. completed finallyy successfuly!
