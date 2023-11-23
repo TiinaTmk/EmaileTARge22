@@ -12,6 +12,6 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: email Github push
-          to: tixy1984@gmail.com
-          from: Tiina Tamkivi
-          body: Github push ${{ github.repository }} by ${{github.event.pusher.name}}, ${{github.event.head_commit.message}}. completed finallyy successfuly!
+          to: jyri.vaitmaa@tthk.ee, tixy1984@gmail.com
+          from: Tiina Tamkivi (TARge22)
+          body: Github push ${{ github.repository }} by ${{github.event.pusher.name}}, ${{github.event.head_commit.message}}. Completed successfully!
